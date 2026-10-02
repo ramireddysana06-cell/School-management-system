@@ -1,5 +1,5 @@
 """
-by Ramu kumar
+by Ramu
 written by fb.com/Ramu.luv
 
 """
