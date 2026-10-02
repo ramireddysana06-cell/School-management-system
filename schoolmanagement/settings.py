@@ -24,14 +24,19 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 # Set DJANGO_SECRET_KEY to a unique secret outside local development.
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-local-development-only')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Set DJANGO_DEBUG=True only for local development.
+DEBUG = os.environ.get('DJANGO_DEBUG', 'false').lower() in {'1', 'true', 'yes'}
 
 ALLOWED_HOSTS = [
     host.strip()
-    for host in os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+    for host in os.environ.get(
+        'DJANGO_ALLOWED_HOSTS',
+        'localhost,127.0.0.1,school-management-system-silk-rho.vercel.app',
+    ).split(',')
     if host.strip()
 ]
+if os.environ.get('VERCEL_URL'):
+    ALLOWED_HOSTS.append(os.environ['VERCEL_URL'].strip())
 
 
 # Application definition
