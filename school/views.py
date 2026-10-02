@@ -114,11 +114,13 @@ def teacher_signup_view(request):
 
 #for checking user is techer , student or admin(by Ramu)
 def is_admin(user):
-    return user.groups.filter(name='ADMIN').exists()
+    return user.is_authenticated and (user.is_superuser or user.groups.filter(name='ADMIN').exists())
+
 def is_teacher(user):
-    return user.groups.filter(name='TEACHER').exists()
+    return user.is_authenticated and user.groups.filter(name='TEACHER').exists()
+
 def is_student(user):
-    return user.groups.filter(name='STUDENT').exists()
+    return user.is_authenticated and user.groups.filter(name='STUDENT').exists()
 
 
 def afterlogin_view(request):
@@ -136,6 +138,7 @@ def afterlogin_view(request):
             return redirect('student-dashboard')
         else:
             return render(request,'school/student_wait_for_approval.html')
+    return redirect('/')
 
 
 
