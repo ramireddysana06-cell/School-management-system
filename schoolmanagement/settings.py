@@ -146,7 +146,7 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'rami.reddy.sana06@gmail.com
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 EMAIL_RECEIVING_USER = [
     address.strip()
-    for address in os.environ.get('EMAIL_RECEIVING_USER', '').split(',')
+    for address in os.environ.get('EMAIL_RECEIVING_USER', 'rami.reddy.sana06@gmail.com').split(',')
     if address.strip()
 ] or ['rami.reddy.sana06@gmail.com']
 EMAIL_TIMEOUT = int(os.environ.get('EMAIL_TIMEOUT', '10'))

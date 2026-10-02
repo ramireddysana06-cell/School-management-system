@@ -20,21 +20,21 @@ def home_view(request):
 
 
 
-#for showing signup/login button for teacher(by Ramu)
+#for showing signup/login button for teacher(by Rami Reddy)
 def adminclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
     return render(request,'school/adminclick.html')
 
 
-#for showing signup/login button for teacher(by Ramu)
+#for showing signup/login button for teacher(by Rami Reddy)
 def teacherclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
     return render(request,'school/teacherclick.html')
 
 
-#for showing signup/login button for student(by Ramu)
+#for showing signup/login button for student(by Rami Reddy)
 def studentclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
@@ -112,7 +112,7 @@ def teacher_signup_view(request):
 
 
 
-#for checking user is techer , student or admin(by Ramu)
+#for checking user is techer , student or admin(by Rami Reddy)
 def is_admin(user):
     return user.is_authenticated and (user.is_superuser or user.groups.filter(name='ADMIN').exists())
 
@@ -143,7 +143,7 @@ def afterlogin_view(request):
 
 
 
-#for dashboard of adminnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn(by Ramu)
+#for dashboard of adminnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn(by Rami Reddy)
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
@@ -162,7 +162,7 @@ def admin_dashboard_view(request):
 
     notice=models.Notice.objects.all()
 
-    #aggregate function return dictionary so fetch data from dictionay(by Ramu)
+    #aggregate function return dictionary so fetch data from dictionay(by Rami Reddy)
     mydict={
         'teachercount':teachercount,
         'pendingteachercount':pendingteachercount,
@@ -188,7 +188,7 @@ def admin_dashboard_view(request):
 
 
 
-#for teacher sectionnnnnnnn by adminnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn(by Ramu)
+#for teacher sectionnnnnnnn by adminnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn(by Rami Reddy)
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
@@ -300,7 +300,7 @@ def admin_view_teacher_salary_view(request):
 
 
 
-#for student by adminnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn(by Ramu)
+#for student by adminnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn(by Rami Reddy)
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
@@ -414,7 +414,7 @@ def admin_view_student_fee_view(request):
 
 
 
-#attendance related viewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww(by Ramu)
+#attendance related viewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww(by Rami Reddy)
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
 def admin_attendance_view(request):
@@ -470,7 +470,7 @@ def admin_view_attendance_view(request,cl):
 
 
 
-#fee related view by adminnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn(by Ramu)
+#fee related view by adminnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn(by Rami Reddy)
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
 def admin_fee_view(request):
@@ -490,7 +490,7 @@ def admin_view_fee_view(request,cl):
 
 
 
-#notice related viewsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss(by Ramu)
+#notice related viewsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss(by Rami Reddy)
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
 def admin_notice_view(request):
@@ -511,7 +511,7 @@ def admin_notice_view(request):
 
 
 
-#for TEACHER  LOGIN    SECTIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN(by Ramu)
+#for TEACHER  LOGIN    SECTIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN(by Rami Reddy)
 @login_required(login_url='teacherlogin')
 @user_passes_test(is_teacher)
 def teacher_dashboard_view(request):
@@ -596,7 +596,7 @@ def teacher_notice_view(request):
 
 
 
-#FOR STUDENT AFTER THEIR Loginnnnnnnnnnnnnnnnnnnnn(by Ramu)
+#FOR STUDENT AFTER THEIR Loginnnnnnnnnnnnnnnnnnnnn(by Rami Reddy)
 @login_required(login_url='studentlogin')
 @user_passes_test(is_student)
 def student_dashboard_view(request):
@@ -636,7 +636,7 @@ def student_attendance_view(request):
 
 
 
-# for aboutus and contact ussssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss (by Ramu)
+# for aboutus and contact ussssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss (by Rami Reddy)
 def aboutus_view(request):
     return render(request,'school/aboutus.html')
 

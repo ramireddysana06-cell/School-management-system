@@ -1,17 +1,18 @@
 # Schoolmanagement
-![developer](https://img.shields.io/badge/Developed%20By%20%3A-Ramu%20Kumar-red)
+![developer](https://img.shields.io/badge/Developed%20By%20%3A-Rami%20Reddy-red)
 ---
 ## screenshots
 ### Homepage
-![homepage snap](https://github.com/Ramukumar1503/schoolmanagement/blob/master/static/screenshots/homepage.png?raw=true)
-### Admin Dashboard
-![dashboard snap](https://github.com/Ramukumar1503/schoolmanagement/blob/master/static/screenshots/adminhomepage.png?raw=true)
+![homepage snap](static/screenshots/homepage.png)
+
 ### Admin Manage Teacher
-![invoice snap](https://github.com/Ramukumar1503/schoolmanagement/blob/master/static/screenshots/adminteacher.png?raw=true)
+![admin teacher snap](static/screenshots/adminteacher.png)
+
 ### Attendance
-![doctor snap](https://github.com/Ramukumar1503/schoolmanagement/blob/master/static/screenshots/attendance.png?raw=true)
-### Teacher Dashboard
-![doctor snap](https://github.com/Ramukumar1503/schoolmanagement/blob/master/static/screenshots/teacher.png?raw=true)
+![attendance snap](static/screenshots/attendance.png)
+
+### Student Data
+![student data snap](static/screenshots/students%20data.png)
 ---
 
 ## Functions
@@ -61,8 +62,8 @@ http://127.0.0.1:8000/
 - Configure a Gmail account with 2-Step Verification, then create an App Password at https://myaccount.google.com/apppasswords.
 - The sender and recipient default to the project owner's Gmail address. In PowerShell, set that account's App Password before starting Django. Optionally set `EMAIL_RECEIVING_USER` to deliver messages to a different inbox:
 ```
-$env:EMAIL_HOST_PASSWORD = "your-16-character-app-password"
-$env:EMAIL_RECEIVING_USER = "recipient@example.com"
+$env:EMAIL_HOST_PASSWORD = "<your Gmail App Password>"
+$env:EMAIL_RECEIVING_USER = "rami.reddy.sana06@gmail.com"
 python manage.py runserver
 ```
 - Do not use your normal Gmail password or store the App Password in source code.
@@ -74,5 +75,4 @@ This project is developed for demo purpose and it's not supposed to be used in r
 
 ## Feedback
 Any suggestion and feedback is welcome. You can message me on facebook
-- [Contact on Facebook](https://fb.com/Ramu.luv)
-- [Subscribe my Channel LazyCoder On Youtube](https://youtube.com/lazycoders)
+- [Contact on Facebook](https://www.facebook.com/RamiReddy04?mibextid=ZbWKwL)

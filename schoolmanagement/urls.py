@@ -1,6 +1,6 @@
 """
-by Ramu
-written by fb.com/Ramu.luv
+by Rami Reddy
+written by fb.com/RamiReddy04
 
 """
 from django.contrib import admin
