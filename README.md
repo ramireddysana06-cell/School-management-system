@@ -68,7 +68,14 @@ python manage.py runserver
 ```
 - Do not use your normal Gmail password or store the App Password in source code.
 
-For deployment, set a unique `DJANGO_SECRET_KEY`, set `DEBUG=False`, and configure `DJANGO_ALLOWED_HOSTS` for your domain.
+## Deploying to Vercel
+- Add a managed PostgreSQL database (for example, Neon or Supabase) and set its connection URL as `DATABASE_URL` in Vercel Project Settings > Environment Variables. Vercel's local SQLite file is not persistent and cannot safely store form submissions.
+- Set `DJANGO_SECRET_KEY` to a unique secret and set `DJANGO_ALLOWED_HOSTS` to your Vercel domain(s), without `https://` or trailing slashes. `DEBUG` is off by default.
+- Before accepting submissions, run Django migrations against that same production database:
+```powershell
+$env:DATABASE_URL = "<your PostgreSQL connection URL>"
+python manage.py migrate
+```
 
 ## Disclaimer
 This project is developed for demo purpose and it's not supposed to be used in real application.
